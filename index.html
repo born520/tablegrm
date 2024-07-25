@@ -1,73 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sticky YouTube Video</title>
-  <style>
-    #video-container {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      width: 30%;
-      height: auto;
-      overflow: hidden;
-      max-width: 100%;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    }
-    iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
-</head>
-<body>
-  <div id="video-container">
-    <div id="player"></div>
-  </div>
-
-  <script>
-    var tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    var player;
-    var startTime = 26; // 시작 시간 (초)
-    var endTime = 36; // 끝 시간 (초)
-
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('player', {
-        height: '100%',
-        width: '100%',
-        videoId: 'tD-MPekRiWI',
-        playerVars: {
-          'autoplay': 1,
-          'mute': 1,
-          'start': startTime,
-          'end': endTime,
-          'loop': 1,
-          'playlist': 'tD-MPekRiWI'
-        },
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
-        }
-      });
-    }
-
-    function onPlayerReady(event) {
-      event.target.playVideo();
-    }
-
-    function onPlayerStateChange(event) {
-      if (event.data == YT.PlayerState.ENDED) {
-        player.seekTo(startTime);
-      }
-    }
-  </script>
-</body>
-</html>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;width:100%;}
+.tg td, .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{font-weight:normal;}
+.tg .tg-efo6{background-color:#FFF;font-style:italic;font-weight:bold;text-align:center;vertical-align:middle}
+.tg .tg-cfs1{background-color:#FFF;border-color:inherit;font-style:italic;font-weight:bold;text-align:center;vertical-align:middle}
+.tg .tg-rcip{background-color:#FFF;border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-nrix{text-align:center;vertical-align:middle}
+@media screen and (max-width: 600px) {
+  .tg, .tg col {width: 100%;}
+  .tg th, .tg td {display: block; width: 100%;}
+  .tg thead {display: none;}
+  .tg tr {margin-bottom: 10px; display: block;}
+}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-cfs1">시즌구분</th>
+    <th class="tg-cfs1">기간</th>
+    <th class="tg-cfs1">요금타입</th>
+    <th class="tg-efo6" colspan="2">디럭스룸</th>
+    <th class="tg-efo6" colspan="2">디럭스 1베드 스위트 풀빌라</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-cfs1" rowspan="3">정규시즌</td>
+    <td class="tg-rcip" rowspan="3">2024.09.01 ~ 2024.11.30</td>
+    <td class="tg-rcip" rowspan="3">조식포함</td>
+    <td class="tg-nrix" colspan="2" rowspan="3">$145</td>
+    <td class="tg-nrix" colspan="2" rowspan="3">$250</td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+    <td class="tg-cfs1" rowspan="3">성수기</td>
+    <td class="tg-rcip" rowspan="3">2024.06.01 ~ 2024.08.31</td>
+    <td class="tg-rcip" rowspan="3">조식포함</td>
+    <td class="tg-nrix" colspan="2" rowspan="3">$185</td>
+    <td class="tg-nrix" colspan="2" rowspan="3">$290</td>
+  </tr>
+  <tr>
+  </tr>
+  <tr>
+  </tr>
+</tbody>
+</table>
